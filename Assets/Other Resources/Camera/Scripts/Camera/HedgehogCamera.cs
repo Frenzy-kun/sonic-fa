@@ -479,7 +479,7 @@ public class HedgehogCamera : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Camera is not orthographic!", this.camera);
+            //Debug.LogError("Camera is not orthographic!", this.camera);
 
             return new Bounds();
         }

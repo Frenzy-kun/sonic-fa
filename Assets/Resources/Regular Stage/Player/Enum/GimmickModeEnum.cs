@@ -11,5 +11,7 @@ public enum GimmickMode
     ForceRoll,
     InTube,
     InTeleporter,
-    InFan
+    InFan,
+    InPole,
+    Waiting,
 }

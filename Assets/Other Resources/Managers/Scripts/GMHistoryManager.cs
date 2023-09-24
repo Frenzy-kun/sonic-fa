@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +15,8 @@ public class GMHistoryManager : MonoBehaviour
     private RegularStageHistoryData regularStageScoreHistoryData = new RegularStageHistoryData();
     [SerializeField]
     private SpecialStageScoreHistory specialStageScoreHistoryData = new SpecialStageScoreHistory();
+    [SerializeField, Tooltip("General information for progression purposes")]
+    private Dictionary<string, int> generalData = new Dictionary<string, int>();
 
     public static GMHistoryManager instance;
     private void Awake()
@@ -133,6 +136,23 @@ public class GMHistoryManager : MonoBehaviour
         for (int x = 0; x < this.regularStageScoreHistoryData.GetActiveSpawnPointDataList().Count; x++)
         {
             this.regularStageScoreHistoryData.GetActiveSpawnPointDataList()[x].SetName(General.TransformSpacesToUpperCaseCharacters(this.regularStageScoreHistoryData.GetActiveSpawnPointDataList()[x].GetSpawnPointType().ToString() + " " + (x + 1)));
+        }
+    }
+
+    public void SetGeneralData(string name, int value)
+    {
+        generalData[name] = value;
+    }
+
+    public int GetGeneralData(string name)
+    {
+        if (generalData.ContainsKey(name))
+        {
+            return generalData[name];
+        }
+        else
+        {
+            return -1;
         }
     }
 }

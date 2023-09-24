@@ -58,6 +58,13 @@ MonoBehaviour:
     nextSceneId: 7
     thumbnail: {fileID: 21300000, guid: b1e9db8307574e240b00dd828587f8e4, type: 3}
     actAbbreviation: QLZ
+  - name: Default Zone 1
+    sceneType: 2
+    actNumber: 2
+    sceneId: 9
+    nextSceneId: 7
+    thumbnail: {fileID: 21300000, guid: b1e9db8307574e240b00dd828587f8e4, type: 3}
+    actAbbreviation: QLZ
   specialStageScenes:
   - name: Special Stage
     sceneType: 3
@@ -121,6 +128,6 @@ MonoBehaviour:
     sceneType: 0
     actNumber: -1
     sceneId: 7
-    nextSceneId: 0
+    nextSceneId: 3
     thumbnail: {fileID: 0}
     actAbbreviation: 

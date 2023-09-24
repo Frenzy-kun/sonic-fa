@@ -118,7 +118,7 @@ public class SpriteController : MonoBehaviour
             direction = 1;
         }
 
-        this.transform.localScale = new Vector2(1 * direction, 1);
+        this.transform.localScale = new Vector3(1 * direction, 1, 1);
     }
 
     /// <summary>

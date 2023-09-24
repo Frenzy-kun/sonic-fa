@@ -244,6 +244,13 @@ public class Sensors : MonoBehaviour
         this.currentBodyHeightRadius = this.currentSizeMode == SizeMode.Shrunk ? this.characterBuild.rollingBodyHeightRadius : this.characterBuild.bodyHeightRadius;
         this.currentPixelPivotPoint = this.characterBuild.playerPixelPivotPoint;
 
+        //helps with stopping players when they hit a wall while at an angle
+        this.currentPushRadius = this.characterBuild.pushRadius;
+        if (this.player.GetGroundMode() != GroundMode.Floor && this.player.GetGrounded())
+        {
+            this.currentPushRadius += 8;
+        }
+
         if (this.currentSizeMode == SizeMode.Gliding)
         {
             this.currentBodyHeightRadius = this.characterBuild.glidingBodyHeightRadius;

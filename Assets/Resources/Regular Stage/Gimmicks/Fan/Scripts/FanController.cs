@@ -94,6 +94,8 @@ public class FanController : TriggerContactGimmick
         base.HedgeOnCollisionStay(player);
         player.velocity.y = this.windSpeed;
         player.SetGrounded(false);
+
+     
     }
 
     /// <summary>

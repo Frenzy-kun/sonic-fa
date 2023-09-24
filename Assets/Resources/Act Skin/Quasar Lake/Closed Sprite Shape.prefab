@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9217748897000530299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9217748897000530295}
+  - component: {fileID: 9217748897000530298}
+  m_Layer: 8
+  m_Name: Closed Sprite Shape
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9217748897000530295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9217748897000530299}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 616, y: -1864, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &9217748897000530298
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9217748897000530299}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -216, y: -88}
+      - {x: -216, y: -8}
+      - {x: -216, y: -8}
+      - {x: -80, y: -8}
+      - {x: -80, y: -8}
+      - {x: -80, y: 56}
+      - {x: -80, y: 56}
+      - {x: -72, y: 80}
+      - {x: -72, y: 80}
+      - {x: -52, y: 88}
+      - {x: -52, y: 88}
+      - {x: -32, y: 88}
+      - {x: -32, y: 88}
+      - {x: 16, y: 88}
+      - {x: 16, y: 88}
+      - {x: 16, y: 136}
+      - {x: 16, y: 136}
+      - {x: 72, y: 136}
+      - {x: 72, y: 136}
+      - {x: 72, y: 88}
+      - {x: 72, y: 88}
+      - {x: 136, y: 88}
+      - {x: 136, y: 88}
+      - {x: 136, y: 136}
+      - {x: 148.13074, y: 136}
+      - {x: 146.62433, y: 136}
+      - {x: 146.5329, y: 136}
+      - {x: 147.67462, y: 136}
+      - {x: 149.86765, y: 136}
+      - {x: 152.93018, y: 136}
+      - {x: 156.68036, y: 136}
+      - {x: 160.93636, y: 136}
+      - {x: 165.51634, y: 136}
+      - {x: 170.2385, y: 136}
+      - {x: 174.92096, y: 136}
+      - {x: 179.38193, y: 136}
+      - {x: 183.43954, y: 136}
+      - {x: 186.91199, y: 136}
+      - {x: 189.61745, y: 136}
+      - {x: 191.37405, y: 136}
+      - {x: 192, y: 136}
+      - {x: 192, y: 136}
+      - {x: 243.70091, y: 133.49915}
+      - {x: 243.70091, y: 133.49915}
+      - {x: 263.50366, y: 131.16248}
+      - {x: 263.50366, y: 131.16248}
+      - {x: 280.43195, y: 127.57239}
+      - {x: 280.43195, y: 127.57239}
+      - {x: 298.5852, y: 117.47156}
+      - {x: 298.5852, y: 117.47156}
+      - {x: 312.1258, y: 104}
+      - {x: 312.1258, y: 104}
+      - {x: 328, y: 24}
+      - {x: 328, y: 24}
+      - {x: 328, y: 22.66095}
+      - {x: 328, y: 18.91264}
+      - {x: 328, y: 13.15829}
+      - {x: 328, y: 5.80113}
+      - {x: 328, y: -2.75559}
+      - {x: 328, y: -12.10866}
+      - {x: 328, y: -21.85484}
+      - {x: 328, y: -31.59089}
+      - {x: 328, y: -40.9136}
+      - {x: 328, y: -49.41972}
+      - {x: 328, y: -56.70602}
+      - {x: 328, y: -62.36928}
+      - {x: 328, y: -66.00625}
+      - {x: 328, y: -67.21371}
+      - {x: 328, y: -65.58842}
+      - {x: 328, y: -60.72717}
+      - {x: 328, y: -96}
+      - {x: 136, y: -96}
+      - {x: 136, y: -96}
+      - {x: 136, y: 0}
+      - {x: 136, y: 0}
+      - {x: 72, y: -8}
+      - {x: 72, y: -8}
+      - {x: 56.74035, y: -28.52942}
+      - {x: 56.74035, y: -28.52942}
+      - {x: 52.54815, y: -46.96533}
+      - {x: 52.54815, y: -46.96533}
+      - {x: 40, y: -88}
+      - {x: 40, y: -88}
+      - {x: -216, y: -88}

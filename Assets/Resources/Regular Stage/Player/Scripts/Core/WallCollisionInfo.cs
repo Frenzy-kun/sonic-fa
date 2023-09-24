@@ -58,14 +58,14 @@ public class WallCollisionInfo : PlayerCollisionInfo
 
         float playerDirection = Mathf.Sign(Mathf.Cos(sensors.groundCollisionInfo.GetCurrentCollisionInfo().GetAngleInRadians())); //Will be 1 normally and be -1 when the player is upside down to allow wall collisions upside down
 
-        if (eSensor && velocity.x * playerDirection < 0)
+        if (eSensor )// && velocity.x * playerDirection < 0)
         {
             wallCollisionInfo = new CollisionInfoData(eSensor)
             {
                 sensorHitData = SensorHitDirectionEnum.Left
             };
         }
-        else if (fSensor && velocity.x * playerDirection > 0)
+        else if (fSensor )// && velocity.x * playerDirection > 0)
         {
             wallCollisionInfo = new CollisionInfoData(fSensor)
             {

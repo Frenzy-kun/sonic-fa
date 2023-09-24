@@ -15,6 +15,7 @@ public class RegularStageHistoryData
     private List<BrokenLifeMonitorData> brokenLifeMonitorDataList = new List<BrokenLifeMonitorData>();
     [SerializeField, Tooltip("The current score data based on the history")]
     private ScoreData scoreData = new ScoreData();
+    
 
     /// <summary>
     /// Saves the current stages history to be used
@@ -175,4 +176,6 @@ public class RegularStageHistoryData
     /// Gets a list of positions of broken life monitors
     /// </summary>
     public List<Vector2> GetBrokenLifeMonitorPositions() => this.brokenLifeMonitorDataList.Select(p => p.GetPosition()).ToList();
+
+    
 }

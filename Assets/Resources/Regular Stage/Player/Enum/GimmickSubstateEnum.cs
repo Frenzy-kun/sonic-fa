@@ -12,4 +12,5 @@ public enum GimmickSubstate
     Teleporter,
     FanSpin,
     Riding,
+    Pole,
 }

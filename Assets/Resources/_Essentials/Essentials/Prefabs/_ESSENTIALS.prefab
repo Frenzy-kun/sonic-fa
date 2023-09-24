@@ -903,17 +903,17 @@ PrefabInstance:
     - target: {fileID: 4613304544203903169, guid: 1c7d0432fb543a849b349bf06bf15b85,
         type: 3}
       propertyPath: currentSceneData.name
-      value: Quasar Lake Act 1
+      value: Default Zone 1
       objectReference: {fileID: 0}
     - target: {fileID: 4613304544203903169, guid: 1c7d0432fb543a849b349bf06bf15b85,
         type: 3}
       propertyPath: currentSceneData.sceneId
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4613304544203903169, guid: 1c7d0432fb543a849b349bf06bf15b85,
         type: 3}
       propertyPath: currentSceneData.actNumber
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4613304544203903169, guid: 1c7d0432fb543a849b349bf06bf15b85,
         type: 3}
@@ -929,7 +929,7 @@ PrefabInstance:
     - target: {fileID: 4613304544203903169, guid: 1c7d0432fb543a849b349bf06bf15b85,
         type: 3}
       propertyPath: currentSceneData.nextSceneId
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4983877011506462232, guid: 1c7d0432fb543a849b349bf06bf15b85,
         type: 3}
