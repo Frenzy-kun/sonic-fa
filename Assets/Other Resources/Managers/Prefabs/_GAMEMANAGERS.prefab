@@ -1135,6 +1135,7 @@ MonoBehaviour:
   actClearGimmick: {fileID: 0}
   targetFrameRate: 60
   onSaveSlotGameLoad: 0
+  mDeadEmeraldPrefab: {fileID: 0}
 --- !u!1 &5594369705737844438
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,4 +11,6 @@ public enum PowerUp
     Super,
     Eggman,
     Random,
+    MonkeyMask,
+
 }

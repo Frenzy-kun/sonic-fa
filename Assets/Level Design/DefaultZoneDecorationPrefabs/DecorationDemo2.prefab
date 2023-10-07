@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8318558983209525665}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: DecorationDemo2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6331162157198469576}
   - component: {fileID: 628536775182790014}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

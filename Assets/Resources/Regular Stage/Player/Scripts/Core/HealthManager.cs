@@ -147,7 +147,8 @@ public class HealthManager : MonoBehaviour
 
         if (this.healthStatus == HealthStatus.Vulnerable)
         {
-            if (this.player.GetHedgePowerUpManager().GetShieldPowerUp().GetShieldType() == ShieldType.None)
+            //if (this.player.GetHedgePowerUpManager().GetShieldPowerUp().GetShieldType() == ShieldType.None)
+            if (GMCharacterManager.Instance().currentCharacter == PlayableCharacter.Sonic)
             {
                 if (GMRegularStageScoreManager.Instance().GetRingCount() <= 0) //Kill The player
                 {
@@ -206,6 +207,14 @@ public class HealthManager : MonoBehaviour
         this.player.GetActionManager().PerformAction<Die>();
         this.player.SetPhysicsState(PhysicsState.Basic);
         this.player.StartDeathUpdate();
+
+        if (GMRegularStageScoreManager.Instance().GetLifeCount() > 0)
+        {
+            string randomID = "ph" + UnityEngine.Random.Range(0, 9999999) + Time.realtimeSinceStartup + "as" + player.transform.position.x + "bn" + player.transform.position.y + UnityEngine.Random.Range(0, 9999999);
+            GMHistoryManager.instance.RegisterDeath(randomID, UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, this.player.transform.position);
+            GMStageManager.Instance().GenerateDeadEmerald (randomID, this.player.transform.position);
+        }
+
     }
 
 }

@@ -178,7 +178,7 @@ public class GMCharacterManager : MonoBehaviour
 
         for (int x = 0; x < this.characters.Count; x++)
         {
-            if (this.characters[x].tag == GMSaveSystem.Instance().GetCurrentPlayerData().GetCharacter())//Found the player so time to create them
+            if (this.characters[x].tag == PlayableCharacter.Sonic)//GMSaveSystem.Instance().GetCurrentPlayerData().GetCharacter())//Found the player so time to create them
             {
                 if (player != null)
                 {

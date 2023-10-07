@@ -22,6 +22,8 @@ public class GMSceneManager : MonoBehaviour
     [Tooltip("Determines whethere a scene is being loaded"), SerializeField]
     private bool isLoadingNextScene;
 
+   
+
     /// <summary>
     /// The single instance of the scene manager
     /// </summary>
@@ -271,4 +273,6 @@ public class GMSceneManager : MonoBehaviour
             UIActDependantController.UpdateActImage();
         }
     }
+
+    
 }

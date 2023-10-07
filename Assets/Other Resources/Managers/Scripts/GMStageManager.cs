@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,6 +31,8 @@ public class GMStageManager : MonoBehaviour
     [Tooltip("A flag to determine whether the game was just loaded from the menu"), SerializeField, LastFoldoutItem()]
     private bool onSaveSlotGameLoad;
 
+    public DeadEmerald mDeadEmeraldPrefab;
+
     /// <summary>
     /// The single instance of the stage manager
     /// </summary>
@@ -52,15 +55,18 @@ public class GMStageManager : MonoBehaviour
     /// <summary>
     /// Everytime a new scene is loaded this is called, This will server as the Start function
     /// </summary>
-    private void OnSceneLoaded()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
+        if (sceneMode == LoadSceneMode.Additive)
+            return;
+
         instance = this;
         this.FindPlayer();
         GMSceneManager.Instance().FindStartPoint();
 
         if (this.player != null)
         {
-            HedgehogCamera.Instance().SetCameraTarget(this.player.gameObject);
+            HedgehogCamera.Instance().SetCameraTarget(this.player.mCameraTarget);
             GMHistoryManager.Instance().CheckAddStartPointAsSpawnPoint();
         }
 
@@ -92,7 +98,7 @@ public class GMStageManager : MonoBehaviour
     /// <summary>
     /// The actions performed on every scene reload
     /// </summary>
-    private void OnLoadCallback(Scene scene, LoadSceneMode sceneMode) => this.OnSceneLoaded();
+    private void OnLoadCallback(Scene scene, LoadSceneMode sceneMode) => this.OnSceneLoaded(scene, sceneMode);
 
     /// <summary>
     /// Get a reference to the static instance of the stage manager
@@ -125,6 +131,17 @@ public class GMStageManager : MonoBehaviour
         {
             GMSaveSystem.Instance().GetCurrentPlayerData().AddStartStageCutsceneId(GMSceneManager.Instance().GetCurrentSceneData().GetSceneId());
             GMSaveSystem.Instance().SaveAndOverwriteData();
+        }
+
+        Dictionary<string, KeyValuePair<string, Vector3>> spots = GMHistoryManager.instance.GetDeadSpots();
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        foreach (KeyValuePair<string, KeyValuePair<string, Vector3>> spot in spots)
+        {
+            if (spot.Value.Key == sceneName)
+            {
+                GenerateDeadEmerald(spot.Key, spot.Value.Value);
+            }
         }
     }
 
@@ -422,6 +439,13 @@ public class GMStageManager : MonoBehaviour
         action();
 
         yield return null;
+    }
+
+    internal void GenerateDeadEmerald(string id, Vector3 position)
+    {
+        DeadEmerald emerald = Instantiate(this.mDeadEmeraldPrefab, position, Quaternion.identity, null);
+
+        emerald.Setup(position, id);
     }
 }
 

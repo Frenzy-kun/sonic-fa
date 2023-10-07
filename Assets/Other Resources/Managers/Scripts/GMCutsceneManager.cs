@@ -94,7 +94,7 @@ public class GMCutsceneManager : MonoBehaviour
             return;
         }
 
-        HedgehogCamera.Instance().SetCameraTarget(GMStageManager.Instance().GetPlayer().gameObject);
+        HedgehogCamera.Instance().SetCameraTarget(GMStageManager.Instance().GetPlayer().mCameraTarget);
         HedgehogCamera.Instance().SetCameraMode(CameraMode.FollowTarget);
         GMStageManager.Instance().GetPlayer().GetActionManager().EndCurrentAction(true);
         GMStageManager.Instance().GetPlayer().SetPlayerState(PlayerState.Cutscene);
@@ -117,7 +117,7 @@ public class GMCutsceneManager : MonoBehaviour
             return;
         }
 
-        HedgehogCamera.Instance().SetCameraTarget(GMStageManager.Instance().GetPlayer().gameObject);
+        HedgehogCamera.Instance().SetCameraTarget(GMStageManager.Instance().GetPlayer().mCameraTarget);
         HedgehogCamera.Instance().SetCameraMode(CameraMode.FollowTarget);
         HedgehogCamera.Instance().GetCameraBoundsHandler().SetActBounds(this.endCutsceneCameraBounds);
         HedgehogCamera.Instance().GetCameraBoundsHandler().SetTargetActBounds(this.endCutsceneCameraBounds);

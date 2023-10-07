@@ -71,7 +71,7 @@ public class MonitorController : SolidContactGimmick
 
         this.monitorController.enabled = false;
 
-        if (this.powerUpToGrant == PowerUp.ExtraLife && GMHistoryManager.Instance().GetRegularStageScoreHistory().CheckIfBrokenLifeMonitorAtPositionExists(this.startPositon))
+        if (GMHistoryManager.Instance().GetRegularStageScoreHistory().CheckIfBrokenLifeMonitorAtPositionExists(this.startPositon))
         {
             GMSpawnManager.Instance().SpawnGameObject(ObjectToSpawn.BrokenMonitor, this.transform.position);
             this.gameObject.SetActive(false);
@@ -177,10 +177,11 @@ public class MonitorController : SolidContactGimmick
             player.AttackRebound();
         }
 
-        if (this.powerUpToGrant == PowerUp.ExtraLife)
+        /*if (this.powerUpToGrant == PowerUp.ExtraLife)
         {
             GMHistoryManager.Instance().GetRegularStageScoreHistory().AddBrokenLifeMonitor(this, this.startPositon);
-        }
+        }*/
+        GMHistoryManager.Instance().GetRegularStageScoreHistory().AddBrokenLifeMonitor(this, this.startPositon);
 
         GMGrantPowerUpManager.Instance().DelayPowerUpGrant(player, this.powerUpToGrant, this.powerUpGrantSound);//Grant the player an item
         this.DestroyMonitor();//Get rid of it

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 /// <summary>
 /// Starts the player skidding action which adds an additional deceleration when moving opposite the direction of velocity
 /// </summary>
@@ -23,7 +23,7 @@ public class Skidding : HedgePrimaryAction
     /// </summary>
     public override bool CanPerformAction()
     {
-        if (this.player.GetGrounded() && Mathf.Abs(this.player.groundVelocity) >= this.minSkidSpeed && this.player.currentGroundMode == GroundMode.Floor && this.player.GetActionManager().CheckActionIsBeingPerformed<Roll>() == false)
+        if (this.player.GetGrounded() && Mathf.Abs(this.player.groundVelocity) >= this.minSkidSpeed &&  this.player.GetActionManager().CheckActionIsBeingPerformed<Roll>() == false) //  && this.player.currentGroundMode == GroundMode.Floor
         {
             return true;
         }

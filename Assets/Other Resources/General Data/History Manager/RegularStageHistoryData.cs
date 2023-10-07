@@ -50,10 +50,13 @@ public class RegularStageHistoryData
     {
         List<Vector2> positions = this.GetSpawnPointListByType(spawnPointType);
 
-        if (positions.Contains(spawnPoint) == false)
+        this.activeSpawnPointDataList.Clear();
+        this.activeSpawnPointDataList.Add(new SpawnPointData(spawnPointType, spawnPoint, this.activeSpawnPointDataList.Count));
+        /*if (positions.Contains(spawnPoint) == false)
         {
+            this.activeSpawnPointDataList.Clear();
             this.activeSpawnPointDataList.Add(new SpawnPointData(spawnPointType, spawnPoint, this.activeSpawnPointDataList.Count));
-        }
+        }*/
     }
 
     /// <summary>
@@ -63,10 +66,10 @@ public class RegularStageHistoryData
     /// </summary>
     public void AddBrokenLifeMonitor(MonitorController monitor, Vector2 spawnPoint)
     {
-        if (monitor.GetPowerUpToGrant() != PowerUp.ExtraLife)
+        /*if (monitor.GetPowerUpToGrant() != PowerUp.ExtraLife)
         {
             return;
-        }
+        }*/
 
         List<Vector2> positions = this.GetBrokenLifeMonitorPositions();
 

@@ -86,9 +86,9 @@ public class HedgehogCamera : MonoBehaviour
             this.camera = this.GetComponent<Camera>();
         }
 
-        if (this.cameraTarget != null && this.cameraTarget.CompareTag("Player"))
+        if (this.cameraTarget != null && this.cameraTarget.GetComponent<CameraOffset>() != null)
         {
-            this.player = this.cameraTarget.GetComponent<Player>();
+            this.player = this.cameraTarget.GetComponent<CameraOffset>().mPlayer;
         }
 
         if (this.cameraTarget == null && this.cameraType != CameraType.Static)

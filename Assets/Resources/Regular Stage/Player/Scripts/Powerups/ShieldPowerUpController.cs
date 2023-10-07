@@ -113,6 +113,7 @@ public class ShieldPowerUpController : HedgePowerUp
     /// </summary>
     public override void RemovePowerUp()
     {
+        GMCharacterManager.Instance().SwapCharacter(PlayableCharacter.Sonic);
         if (this.activePowerUp == null)
         {
             return;
@@ -128,6 +129,8 @@ public class ShieldPowerUpController : HedgePowerUp
         this.hedgeShieldAbility.GetPowerUpBase().SetActive(true);
         this.hedgeShieldAbility = null;
         this.currentShieldType = ShieldType.None;
+
+        
     }
 
     /// <summary>

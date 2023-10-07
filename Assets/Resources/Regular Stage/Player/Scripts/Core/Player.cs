@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 /// <summary>
@@ -116,6 +117,8 @@ public class Player : MonoBehaviour
     [Tooltip("Prepares the victory animation for when the player lands"), SerializeField, FirstFoldOutItem("Extra")]
     private bool beginVictoryActionOnGroundContact;
 
+    public GameObject mCameraTarget;
+
     private void Reset()
     {
         this.sensors = this.GetComponent<Sensors>();
@@ -165,7 +168,7 @@ public class Player : MonoBehaviour
     {
         if (HedgehogCamera.Instance().GetCameraTarget() == null)
         {
-            HedgehogCamera.Instance().SetCameraTarget(this.gameObject);
+            HedgehogCamera.Instance().SetCameraTarget(this.mCameraTarget);
         }
 
         GMStageManager.Instance().OnPlayerInitialize();//Inform the GM the player has been initialized
@@ -243,6 +246,8 @@ public class Player : MonoBehaviour
             this.velocity = Vector2.zero;
         }
     }
+
+    
 
     /// <summary>
     /// Begin the start health update coroutine
@@ -379,7 +384,7 @@ public class Player : MonoBehaviour
     /// </summary>
     private void ApplySlopeFactor()
     {
-        bool walkingOnSlope = Mathf.Round(this.sensors.groundCollisionInfo.GetCurrentCollisionInfo().GetAngleInDegrees()) is >= 45 and <= 315;
+        bool walkingOnSlope = Mathf.Round(this.sensors.groundCollisionInfo.GetCurrentCollisionInfo().GetAngleInDegrees()) is >= 22 and <= 338;
         float currentSlopeFactor = this.physicsInfo.slopeFactor;
 
         if (walkingOnSlope || this.horizontalControlLock)
@@ -494,8 +499,12 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Check whether to lock the players controls when they slide off a slope
     /// </summary>
+    ///
+    bool lockLeft = false;
+    bool lockRight = false;
     private void CheckHorizontalControlLock()
     {
+        
         float roundedAngle = Mathf.Round(this.sensors.groundCollisionInfo.GetCurrentCollisionInfo().GetAngleInDegrees());
 
         if (Mathf.Abs(this.groundVelocity) < this.physicsInfo.basicFall && this.currentGroundMode != 0 && this.gimmickManager.GetActiveGimmickMode() != GimmickMode.OnCorkscrew)
@@ -507,7 +516,18 @@ public class Player : MonoBehaviour
                 this.groundVelocity = 0;//Set the ground speed back to 0
             }
 
-            this.BeginHorizontalControlLockCoroutine();
+            if (this.currentGroundMode == GroundMode.LeftWall && this.inputManager.GetCurrentInput().x < 0f)
+            {
+                //lockLeft = true;
+                this.BeginHorizontalControlLockCoroutine();
+            }
+            if (this.currentGroundMode == GroundMode.RightWall && this.inputManager.GetCurrentInput().x > 0f)
+            {
+                //lockRight = true;
+                this.BeginHorizontalControlLockCoroutine();
+            }
+
+            //this.BeginHorizontalControlLockCoroutine();
         }
     }
 
@@ -527,7 +547,7 @@ public class Player : MonoBehaviour
     {
         acceleration = GMStageManager.Instance().ConvertToDeltaValue(acceleration);
 
-        if (this.inputManager.GetCurrentInput().x == 1) //As long as the player is not going above top speed i.e by running down a slope already apply acceleration
+        if (this.inputManager.GetCurrentInput().x == 1 && !lockRight) //As long as the player is not going above top speed i.e by running down a slope already apply acceleration
         {
             if ((horizontalVelocity < topSpeed) && (horizontalVelocity >= 0 || this.GetGrounded() == false))
             {
@@ -540,7 +560,7 @@ public class Player : MonoBehaviour
             }
 
         }
-        else if (this.inputManager.GetCurrentInput().x == -1) //As long as the player is not going above top speed i.e by running down a slope already apply acceleration
+        else if (this.inputManager.GetCurrentInput().x == -1 && !lockLeft) //As long as the player is not going above top speed i.e by running down a slope already apply acceleration
         {
             if ((horizontalVelocity > -topSpeed) && (horizontalVelocity <= 0 || this.GetGrounded() == false))
             {
@@ -765,6 +785,8 @@ public class Player : MonoBehaviour
         yield return new WaitUntil(() => this.grounded);//Ensures the lock timer does not start till the player is grounded
         yield return new WaitForSeconds(General.StepsToSeconds(this.horizontalControlLockTime));
         this.inputManager.SetInputRestriction(InputRestriction.None);
+        lockLeft = false;
+        lockRight = false;
         this.horizontalControlLock = false;
     }
 

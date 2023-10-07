@@ -22,6 +22,7 @@ public class DecorationGenerator : MonoBehaviour
     public Vector2 mScaleMultiplier = Vector2.one;
 
     public bool mClearBeforeRegenerate = true;
+    public string mGeneratedLayerMask = "Decoration Layer";
 
 
     private void Update()
@@ -35,7 +36,7 @@ public class DecorationGenerator : MonoBehaviour
     public void Regenerate()
     {
         Collider2D collider = this.GetComponent<Collider2D>();
-
+        
         if (!collider)
         {
             Debug.LogError("You are trying to generate decorations when there's no collider");
@@ -58,6 +59,7 @@ public class DecorationGenerator : MonoBehaviour
         if (mClearBeforeRegenerate)
             this.ClearAll();
 
+        int layermask = LayerMask.NameToLayer(mGeneratedLayerMask);
         int random;
         GameObject deco;
         Vector3 finalPosition;
@@ -68,6 +70,7 @@ public class DecorationGenerator : MonoBehaviour
         for (int i = 1; i < maxLayers; i++)
         {
             deco = Instantiate(this.gameObject, this.transform, false);
+            deco.layer = layermask;
             DestroyImmediate(deco.GetComponent<Collider2D>());
             DestroyImmediate(deco.GetComponent<SpriteShapeExtras.LegacyCollider>());
             deco.GetComponent<DecorationGenerator>().ClearAll();
@@ -100,7 +103,7 @@ public class DecorationGenerator : MonoBehaviour
             random = UnityEngine.Random.Range(0, this.mDecorationProfile.mDecorations.Count);
             randomLayer = UnityEngine.Random.Range(1, maxLayers);
             deco = Instantiate(this.mDecorationProfile.mDecorations[random], this.transform, false);
-
+            deco.layer = layermask;
 
             finalPosition = new Vector3(
                 UnityEngine.Random.Range(collider.bounds.min.x + xMargin, collider.bounds.max.x - xMargin),

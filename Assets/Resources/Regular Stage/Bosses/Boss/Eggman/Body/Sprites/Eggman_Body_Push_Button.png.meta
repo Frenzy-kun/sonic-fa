@@ -3,7 +3,7 @@ guid: bfb58998de0b615429b2262119497c06
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,6 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -78,6 +79,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -417,21 +430,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Eggman_Body_Push_Button_6: 1683849296
-      Eggman_Body_Push_Button_2: -1409255162
-      Eggman_Body_Push_Button_4: 1364363046
-      Eggman_Body_Push_Button_7: -781872838
+      Eggman_Body_Push_Button_0: 121004550
+      Eggman_Body_Push_Button_1: -2009338111
+      Eggman_Body_Push_Button_10: 1745271330
       Eggman_Body_Push_Button_11: 439368083
       Eggman_Body_Push_Button_12: -710244996
       Eggman_Body_Push_Button_13: -1408736492
-      Eggman_Body_Push_Button_5: -1283863739
-      Eggman_Body_Push_Button_10: 1745271330
-      Eggman_Body_Push_Button_8: -1338583470
       Eggman_Body_Push_Button_14: -574746958
+      Eggman_Body_Push_Button_2: -1409255162
       Eggman_Body_Push_Button_3: 205894857
+      Eggman_Body_Push_Button_4: 1364363046
+      Eggman_Body_Push_Button_5: -1283863739
+      Eggman_Body_Push_Button_6: 1683849296
+      Eggman_Body_Push_Button_7: -781872838
+      Eggman_Body_Push_Button_8: -1338583470
       Eggman_Body_Push_Button_9: 29652269
-      Eggman_Body_Push_Button_0: 121004550
-      Eggman_Body_Push_Button_1: -2009338111
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

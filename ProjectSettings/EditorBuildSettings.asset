@@ -36,6 +36,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Act Skin/Default Zone/Scene/Default Zone 1.unity
     guid: 222a09f74ba5d7345adb8527df04c9bd
+  - enabled: 1
+    path: Assets/Resources/Act Skin/Default Zone/Scene/Chunks/Island_20_20.unity
+    guid: de2bd33ac05a7b649b3410dfb6ca1ba0
+  - enabled: 1
+    path: Assets/Resources/Act Skin/Default Zone/Scene/Chunks/Island_21_20.unity
+    guid: bae3a524fc82bcd4ab6c80bc47382e45
+  - enabled: 1
+    path: Assets/Resources/Act Skin/Default Zone/Scene/Chunks/Island_22_20.unity
+    guid: c9743cb40b3f6d449899593dc2ab8cac
+  - enabled: 1
+    path: Assets/Resources/Act Skin/Default Zone/Scene/Chunks/Island_23_20.unity
+    guid: ccbfbcfaf8643f14ba016a9263097019
+  - enabled: 1
+    path: Assets/Resources/Act Skin/Default Zone/Scene/Chunks/Island_22_21.unity
+    guid: a557fb8e6a09c0441be656ea4fdc7db6
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 16c3b1c9893058e4dbe87dc708316d51,
       type: 2}

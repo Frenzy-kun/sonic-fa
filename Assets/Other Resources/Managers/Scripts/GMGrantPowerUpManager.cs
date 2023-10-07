@@ -146,6 +146,11 @@ public class GMGrantPowerUpManager : MonoBehaviour
                 this.GrantPowerUp(player, randomPowerUp);
 
                 break;
+            case PowerUp.MonkeyMask:
+                GMCharacterManager.Instance().SwapCharacter(PlayableCharacter.Knuckles);
+                //powerupGameObject = GMSpawnManager.Instance().SpawnGameObject(ObjectToSpawn.RegularShield, player.transform.position);
+                //player.GetHedgePowerUpManager().GetShieldPowerUp().GrantShield(ShieldType.RegularShield, powerupGameObject);
+                break;
             default:
                 break;
         }

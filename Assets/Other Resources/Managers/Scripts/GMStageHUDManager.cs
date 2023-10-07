@@ -154,8 +154,8 @@ public class GMStageHUDManager : MonoBehaviour
         GMSaveSystem.Instance().GetCurrentPlayerData().SerializeRegularStageData(GMStageManager.Instance().GetPlayer());
         GMSaveSystem.Instance().SaveAndOverwriteData();
         GMRegularStageScoreManager.Instance().UpdateUIElements();
-
-        if (GMSaveSystem.Instance().GetCurrentPlayerData().GetLives() >= 0)
+        GMSceneManager.Instance().ReloadCurrentScene();
+        /*if (GMSaveSystem.Instance().GetCurrentPlayerData().GetLives() >= 0)
         {
             GMSceneManager.Instance().ReloadCurrentScene();
         }
@@ -165,7 +165,7 @@ public class GMStageHUDManager : MonoBehaviour
             GMSaveSystem.Instance().GetCurrentPlayerData().ResetLifeCountToDefault();
             GMSaveSystem.Instance().SaveAndOverwriteData();
             GMSceneManager.Instance().LoadTitleScreenScene();
-        }
+        }*/
     }
 
     /// <summary>

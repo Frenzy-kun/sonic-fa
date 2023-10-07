@@ -45965,7 +45965,7 @@ Transform:
   m_GameObject: {fileID: 1973833479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 64, y: 64, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6552373529182496183}
@@ -60688,6 +60688,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0}
   mCollectParticles: {fileID: 1712871887}
   mIcon: {fileID: 6398080296653390063}
+  mParentController: {fileID: 3039357821477775916}
 --- !u!1 &5670907245516047514
 GameObject:
   m_ObjectHideFlags: 0
@@ -60767,7 +60768,7 @@ Transform:
   m_GameObject: {fileID: 6398080296653390063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 32, y: 32, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1973833480}
@@ -60815,7 +60816,7 @@ SpriteRenderer:
   m_SortingLayerID: 13357351
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -53910454267292995, guid: 21980957a565a694cb11e5bb4db2c690, type: 3}
+  m_Sprite: {fileID: -960879344, guid: a540c6c14a035da4ea0f677b7c6cce57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -61126,6 +61127,7 @@ MonoBehaviour:
   mCollectible: {fileID: 634466067552881319}
   mSPCollectible: {fileID: 1116167205}
   mRingDiscount: {fileID: 1977046274}
+  id: O9bBAEUL7EqgiFCTqwgKug
 --- !u!50 &3374300336997672546
 Rigidbody2D:
   serializedVersion: 4

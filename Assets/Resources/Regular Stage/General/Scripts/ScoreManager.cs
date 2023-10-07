@@ -156,7 +156,13 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// Reduces the player life count by 1
     /// </summary>
-    public void DecrementLifeCount() => this.scoreData.lifeCount--;
+    public void DecrementLifeCount()
+    {
+        if (this.scoreData.lifeCount > 0)
+        {
+            this.scoreData.lifeCount--;
+        }
+    }
 
     /// <summary>
     /// Set the timer count of the regular stage

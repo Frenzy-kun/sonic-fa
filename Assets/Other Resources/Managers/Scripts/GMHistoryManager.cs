@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,10 @@ public class GMHistoryManager : MonoBehaviour
     private SpecialStageScoreHistory specialStageScoreHistoryData = new SpecialStageScoreHistory();
     [SerializeField, Tooltip("General information for progression purposes")]
     private Dictionary<string, int> generalData = new Dictionary<string, int>();
+
+    [SerializeField, Tooltip("General information for progression purposes")]
+    private Dictionary<string, KeyValuePair<string, Vector3>> deadSpots = new Dictionary<string, KeyValuePair<string, Vector3>>();
+
 
     public static GMHistoryManager instance;
     private void Awake()
@@ -155,4 +160,25 @@ public class GMHistoryManager : MonoBehaviour
             return -1;
         }
     }
+
+    internal void RegisterDeath(string id, string sceneName, Vector3 position)
+    {
+        deadSpots[id] = new KeyValuePair<string, Vector3>(sceneName, position);
+        Debug.Log("ID for death: " + id);
+    }
+
+    internal void RemoveRegisteredDeath(string id)
+    {
+        if ( deadSpots.ContainsKey(id))
+        {
+            deadSpots.Remove(id);
+            Debug.Log("removed ID: " + id);
+        }
+    }
+
+    internal Dictionary<string, KeyValuePair<string, Vector3>> GetDeadSpots()
+    {
+        return deadSpots;
+    }
+
 }
